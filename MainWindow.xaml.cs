@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace QuadraticEquations
 {
@@ -31,56 +19,38 @@ namespace QuadraticEquations
             TBx2.Text = null;
             try
             {
-                double
-                    a = Convert.ToDouble(TBa.Text),
-                    b = Convert.ToDouble(TBb.Text),
-                    c = Convert.ToDouble(TBc.Text),
-                    discriminant = Math.Pow(b, 2) - (4 * a * c);
 
-
-                if (a == 0)
+                if (Convert.ToDouble(TBa.Text) == 0)
                 {
-                    if (b != 0 && c != 0) TBx1.Text = Convert.ToString(-c / b);
-                    else if (c == 0 && b != 0) TBx1.Text = Convert.ToString(-b);
-                    else if (b == 0 && c == 0 || b == 0 && c != 0) TBx1.Text = "Нет уравнения";
+                    if (Convert.ToDouble(TBb.Text) != 0 && Convert.ToDouble(TBc.Text) != 0) TBx1.Text = Convert.ToString(-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBb.Text));
+                    else if (Convert.ToDouble(TBc.Text) == 0 && Convert.ToDouble(TBb.Text) != 0) TBx1.Text = Convert.ToString(-(Convert.ToDouble(TBb.Text)));
+                    else if (Convert.ToDouble(TBb.Text) == 0 && Convert.ToDouble(TBc.Text) == 0 || Convert.ToDouble(TBb.Text) == 0 && Convert.ToDouble(TBc.Text) != 0) TBx1.Text = "Нет уравнения";
                 }
-                else if (b == 0)
+                else if (Convert.ToDouble(TBb.Text) == 0)
                 {
-                    if (c == 0) TBx1.Text = "0";
-                    if (-c / a > 0)
+                    if (Convert.ToDouble(TBc.Text) == 0) TBx1.Text = "0";
+                    if (-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text) > 0)
                     {
-                        TBx1.Text = Convert.ToString(Math.Round(Math.Sqrt(-c / a), 5));
-                        TBx2.Text = "-" + Convert.ToString(Math.Round(Math.Sqrt(-c / a),5));
+                        TBx1.Text = Convert.ToString(Math.Round(Math.Sqrt(-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text)), 5));
+                        TBx2.Text = "-" + Convert.ToString(Math.Round(Math.Sqrt(-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text)),5));
                     }
                     else TBx1.Text = "Нет корней";
                 }
-                else if (c == 0)
+                else if (Convert.ToDouble(TBc.Text) == 0)
                 {
-                    double x = -b / a;
-                    TBx1.Text = Convert.ToString(x);
+                    TBx1.Text = Convert.ToString(-(Convert.ToDouble(TBb.Text)) / Convert.ToDouble(TBa.Text));
                     TBx2.Text = "0";
                 }
-                else if (discriminant < 0)
+                else if (Math.Pow(Convert.ToDouble(TBb.Text), 2) - (4 * Convert.ToDouble(TBa.Text) * Convert.ToDouble(TBc.Text)) < 0)
                 {
-                    double
-                        x = (-b / (2 * a)),
-                        i = (Math.Sqrt(-discriminant) / (2 * a));
-
-                    TBx1.Text = x.ToString() + "+" + Math.Round(i, 2).ToString() + "i";
-                    TBx2.Text = x.ToString() + "-" + Math.Round(i, 2).ToString() + "i";
+                    TBx1.Text = (-(Convert.ToDouble(TBb.Text)) / (2 * Convert.ToDouble(TBa.Text))).ToString() + "+" + Math.Round((Math.Sqrt(-(Math.Pow(Convert.ToDouble(TBb.Text), 2) - (4 * Convert.ToDouble(TBa.Text) * Convert.ToDouble(TBc.Text)))) / (2 * Convert.ToDouble(TBa.Text))), 2).ToString() + "i";
+                    TBx2.Text = (-(Convert.ToDouble(TBb.Text)) / (2 * Convert.ToDouble(TBa.Text))).ToString() + "-" + Math.Round((Math.Sqrt(-(Math.Pow(Convert.ToDouble(TBb.Text), 2) - (4 * Convert.ToDouble(TBa.Text) * Convert.ToDouble(TBc.Text)))) / (2 * Convert.ToDouble(TBa.Text))), 2).ToString() + "i";
                 }
-                else if (discriminant == 0)
-                {
-                    double x = -b / (2 * a);
-                    TBx1.Text = Convert.ToString(x);
-                }
+                else if (Math.Pow(Convert.ToDouble(TBb.Text), 2) - (4 * Convert.ToDouble(TBa.Text) * Convert.ToDouble(TBc.Text)) == 0) TBx1.Text = Convert.ToString(-Convert.ToDouble(TBb.Text) / (2 * Convert.ToDouble(TBa.Text)));
                 else
                 {
-                    double
-                        x1 = (-b + Math.Sqrt(discriminant)) / (2 * a),
-                        x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
-                    TBx1.Text = Convert.ToString(Math.Round(x1, 5));
-                    TBx2.Text = Convert.ToString(Math.Round(x2, 5));
+                    TBx1.Text = Convert.ToString(Math.Round((-(Convert.ToDouble(TBb.Text)) + Math.Sqrt(Math.Pow(Convert.ToDouble(TBb.Text), 2) - (4 * Convert.ToDouble(TBa.Text) * Convert.ToDouble(TBc.Text)))) / (2 * Convert.ToDouble(TBa.Text)), 5));
+                    TBx2.Text = Convert.ToString(Math.Round((-(Convert.ToDouble(TBb.Text)) - Math.Sqrt(Math.Pow(Convert.ToDouble(TBb.Text), 2) - (4 * Convert.ToDouble(TBa.Text) * Convert.ToDouble(TBc.Text)))) / (2 * Convert.ToDouble(TBa.Text)), 5));
                 }
             }
             catch
