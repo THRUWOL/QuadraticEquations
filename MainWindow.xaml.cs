@@ -24,7 +24,7 @@ namespace QuadraticEquations
                 else if (Convert.ToDouble(TBb.Text) == 0)
                 {
                     if (Convert.ToDouble(TBc.Text) == 0) TBx1.Text = "0";
-                    if (-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text) > 0)
+                    else if (-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text) > 0)
                     {
                         TBx1.Text = Convert.ToString(Math.Round(Math.Sqrt(-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text)), 5));
                         TBx2.Text = "-" + Convert.ToString(Math.Round(Math.Sqrt(-(Convert.ToDouble(TBc.Text)) / Convert.ToDouble(TBa.Text)), 5));
