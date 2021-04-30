@@ -9,7 +9,6 @@ namespace QuadraticEquations
         {
             InitializeComponent();
         }
-
         private void Bstart_Click(object sender, RoutedEventArgs e)
         {
             try
