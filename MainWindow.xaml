@@ -16,8 +16,8 @@
         <Label Content="c =" HorizontalAlignment="Left" Margin="28,211,0,0" VerticalAlignment="Top" FontSize="36" Width="66"/>
         <Label Content="x₁ =" HorizontalAlignment="Left" Margin="28,274,0,0" VerticalAlignment="Top" FontSize="36" Width="66"/>
         <Label Content="x₂ =" HorizontalAlignment="Left" Margin="28,337,0,0" VerticalAlignment="Top" FontSize="36" Width="66"/>
-        <TextBox x:Name="TBx1" HorizontalAlignment="Center" Height="53" Margin="99,285,23.2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontSize="30" BorderBrush="{x:Null}" Foreground="#FF0071FF"/>
-        <TextBox x:Name="TBx2" HorizontalAlignment="Center" Height="53" Margin="99,347,23.2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontSize="30" BorderBrush="{x:Null}" Foreground="#FF0071FF"/>
+        <TextBox x:Name="TBx1" HorizontalAlignment="Center" Height="53" Margin="99,285,23.2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontSize="30" BorderBrush="{x:Null}" Foreground="#FF00AD08" SelectionBrush="#FF3BD700"/>
+        <TextBox x:Name="TBx2" HorizontalAlignment="Center" Height="53" Margin="99,347,23.2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" FontSize="30" BorderBrush="{x:Null}" Foreground="#FF00AD08" SelectionBrush="#FF3BD700"/>
         <Button x:Name="Bstart" Content="ПОИСК" HorizontalAlignment="Left" Margin="76,405,0,0" VerticalAlignment="Top" Width="206" FontSize="36" Click="Bstart_Click" Background="{x:Null}" Foreground="Red" BorderBrush="Red"/>
         <Label Content="a" HorizontalAlignment="Left" Margin="28,22,0,0" VerticalAlignment="Top" FontSize="36" Width="28" Foreground="#FFFF2E00"/>
         <Label Content="b" HorizontalAlignment="Left" Margin="101,22,0,0" VerticalAlignment="Top" FontSize="36" Width="32" Foreground="#FFFF2E00"/>
